@@ -11,5 +11,6 @@ export const LoginSelectors ={
         Phone: '[data-test="phone"]',
         Email: '[data-test="email"]',
         Password: '[data-test="password"]',
-        RegisterButton:'[data-test="register-submit"]'
+        RegisterButton:'[data-test="register-submit"]',
+        SignInLogin: '[data-test="login-submit"]'
 }
