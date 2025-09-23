@@ -1,8 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { LoginSelectors } from '../Selectors/UserLoginSelectors';
 test.describe('User login scenarios',()=>{
-    test.beforeEach(async({page})=>{
+    test.beforeEach(async({page,isMobile})=>{
         await page.goto('/');
+        if (isMobile){
+            await page.locator(LoginSelectors.HamburgerIcon).click();
+    }
     })
     test('UserRegister',async ({page})=>{
         await page.getByTestId('nav-sign-in').click();
