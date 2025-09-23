@@ -12,5 +12,6 @@ export const LoginSelectors ={
         Email: '[data-test="email"]',
         Password: '[data-test="password"]',
         RegisterButton:'[data-test="register-submit"]',
-        SignInLogin: '[data-test="login-submit"]'
+        SignInLogin: '[data-test="login-submit"]',
+        HamburgerIcon: 'button[class="navbar-toggler"]'
 }
