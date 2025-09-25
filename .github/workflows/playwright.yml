@@ -4,6 +4,9 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+        _CLIENT_USER_LOGIN: ${{secrets.CLIENT_USER_LOGIN}}
+        _CLIENT_PASSWORD: ${{secrets.CLIENT_PASSWORD}}
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -13,12 +16,6 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: environment
-      env:
-          _CLIENT_USER_LOGIN: ${{secrets.CLIENT_USER_LOGIN}}
-          _CLIENT_PASSWORD: ${{secrets.CLIENT_PASSWORD}}
-      run: 
-        echo "Using secrets to run framework $_CLIENT_USER_LOGIN"
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
