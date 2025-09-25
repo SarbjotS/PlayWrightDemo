@@ -13,10 +13,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - name: Debug secrets
-        run: |
-          echo "CLIENT_USER_LOGIN is set? ${{ env.CLIENT_USER_LOGIN != '' }}"
-          echo "CLIENT_PASSWORD is set? ${{ env.CLIENT_PASSWORD != '' }}"
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Browsers
