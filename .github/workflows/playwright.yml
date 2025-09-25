@@ -15,10 +15,10 @@ jobs:
       run: npx playwright install --with-deps
     - name: environment
       env:
-          CLIENT_USER_LOGIN: ${{secrets.CLIENT_USER_LOGIN}}
-          CLIENT_PASSWORD: ${{secrets.CLIENT_PASSWORD}}
+          _CLIENT_USER_LOGIN: ${{secrets.CLIENT_USER_LOGIN}}
+          _CLIENT_PASSWORD: ${{secrets.CLIENT_PASSWORD}}
       run: 
-        echo "Using secrets to run framework"
+        echo "Using secrets to run framework $_CLIENT_USER_LOGIN"
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
