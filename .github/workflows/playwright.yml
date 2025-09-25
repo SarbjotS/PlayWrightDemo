@@ -5,15 +5,16 @@ jobs:
     timeout-minutes: 60
     environment: sit
     runs-on: ubuntu-latest
+    env:
+        CLIENT_USER_LOGIN: ${{secrets.CLIENT_USER_LOGIN}}
+        CLIENT_PASSWORD: ${{secrets.CLIENT_PASSWORD}}
+        
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-      env:
-        CLIENT_USER_LOGIN: ${{secrets.CLIENT_USER_LOGIN}}
-        CLIENT_PASSWORD: ${{secrets.CLIENT_PASSWORD}}
-        
+
     - name: Debug secrets
       run: |
              echo "CLIENT_USER_LOGIN is set? ${{ secrets.CLIENT_USER_LOGIN != '' }}"
