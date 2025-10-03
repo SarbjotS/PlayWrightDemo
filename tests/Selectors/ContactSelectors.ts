@@ -6,7 +6,5 @@ export const ContactSelectors={
     Subject: "[id='subject']",
     FormBox: "[id='message']",
     Attachments: "[data-test='attachment']",
-    SendButton: "[data-test='contact-submit']"
-
-
+    SendButton: "[data-test='contact-submit']",
 }

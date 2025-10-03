@@ -20,7 +20,7 @@ test.describe("Client Sends a message",()=>{
         await page.locator(ContactSelectors.FormBox).fill("This is a whooooooooooole lot of words. Hopefully 50 words long.")
         await page.locator(ContactSelectors.Attachments).setInputFiles('EmptyTextFile.txt');
         await page.locator(ContactSelectors.SendButton).click();
-        await page.locator()
+        await expect(page.getByText('Thanks for your message! We will contact you shortly.')).toBeVisible();
 
     })
 
