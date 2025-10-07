@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LoginSelectors } from '../Selectors/UserLoginSelectors';
 import { ContactSelectors } from '../Selectors/ContactSelectors';
-import path from 'path/win32';
 
 test.describe("Client Sends a message",()=>{
     test.beforeEach(async({page,isMobile})=>{
