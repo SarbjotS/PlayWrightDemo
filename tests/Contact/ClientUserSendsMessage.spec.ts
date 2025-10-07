@@ -24,11 +24,14 @@ test.describe("Client Sends a message",()=>{
 
     })
 
-    test('Verify error states on contact page', async(page) =>{
-        
-    })
+    test('Verify error states on contact page', async({page}) =>{
+        await page.locator(ContactSelectors.ContactNavButton).click();
+        await page.locator(ContactSelectors.SendButton).click();
+        await expect(page.getByText('First name is required')).toBeVisible();
+        await expect(page.getByText('Last name is required')).toBeVisible();
+        await expect(page.getByText('Email is required')).toBeVisible();
+        await expect(page.getByText('Subject is required')).toBeVisible();
+        await expect(page.getByText('Message is required')).toBeVisible();
 
-    test('Verify signed in user can send a message',async(page)=>{
-        
     })
 })
