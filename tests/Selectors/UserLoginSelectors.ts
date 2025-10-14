@@ -13,5 +13,8 @@ export const LoginSelectors ={
         Password: '[data-test="password"]',
         RegisterButton:'[data-test="register-submit"]',
         SignInLogin: '[data-test="login-submit"]',
-        HamburgerIcon: 'button[class="navbar-toggler"]'
+        HamburgerIcon: 'button[class="navbar-toggler"]',
+        UserDropdown: '[data-test="nav-menu"]',
+        MessagesButton: '[data-test="nav-admin-messages"]',
+        MessageDetails: '[data-test="btn btn-sm btn-primary mr-1"]'
 }

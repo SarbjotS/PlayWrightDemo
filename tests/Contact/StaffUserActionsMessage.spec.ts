@@ -16,7 +16,7 @@ test.describe('Staff user actions a message',()=>{
     test('Staff user validates new message', async({page})=>{
         const staffLogin = new Login(page)
         await staffLogin.NavToLoginPage();
-        await staffLogin.Login(process.env.STAFF_USER_LOGIN || '', process.env.CLIENT_PASSWORD || '');
+        await staffLogin.Login(process.env.STAFF_USER_LOGIN || '', process.env.STAFF_PASSWORD || '');
     });
         
     })
