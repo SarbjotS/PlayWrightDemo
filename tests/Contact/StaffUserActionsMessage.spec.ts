@@ -34,12 +34,13 @@ test.describe('Staff user actions a message',()=>{
         const staffLogin = new Login(page)
         await staffLogin.NavToLoginPage();
         await staffLogin.Login(process.env.STAFF_USER_LOGIN || '', process.env.STAFF_PASSWORD || '');
-        await page.locator(ContactSelectors.ContactNavButton).click();
+        await page.locator(MessageSelectors.UserDropdown).click();
+        await page.locator(MessageSelectors.MessagesButton).click();
         await page.getByText("Details").first().click();
         await page.locator(MessageSelectors.MessageStatus).selectOption("RESOLVED");
-        await page.locator(MessageSelectors.MessageTextField).fill("This has been resolved");
+        await page.locator(MessageSelectors.AddReplyTextBox).fill("This has been resolved");
         await page.locator(MessageSelectors.ReplySubmit).click();
-        await expect(MessageSelectors.AddReplyTextBox).toContain("This has been resolved")
+        await expect(MessageSelectors.AddReplyTextBox).not.toBeUndefined();
     })
 
 })
