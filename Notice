@@ -1,4 +1,6 @@
 This will be a demo consisting of a Playwright framework, the website for which tests will be automated is https://practicesoftwaretesting.com/
 Only added for the purposes of this demo framework, otherwise these would not be committed.
-CLIENT_USER_LOGIN = customer@practicesoftwaretesting.com
+CLIENT_USER_LOGIN = customer2@practicesoftwaretesting.com
 CLIENT_PASSWORD = welcome01
+STAFF_USER_LOGIN = admin@practicesoftwaretesting.com
+STAFF_PASSWORD = welcome01

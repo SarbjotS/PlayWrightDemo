@@ -8,6 +8,8 @@ jobs:
     env:
       CLIENT_USER_LOGIN: ${{ secrets.CLIENT_USER_LOGIN }}
       CLIENT_PASSWORD: ${{ secrets.CLIENT_PASSWORD }}
+      ADMIN_USER_LOGIN: ${{ secrets.ADMIN_USER_LOGIN }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
