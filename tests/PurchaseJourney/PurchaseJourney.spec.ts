@@ -9,11 +9,11 @@ test.describe("Client going through purchase journey",async()=>{
     test.beforeEach(async({page, isMobile,})=>{
     await page.goto('/');
         if (isMobile){
-            await page.locator(LoginSelectors.HamburgerIcon).click();
+            //await page.locator(LoginSelectors.HamburgerIcon).click();
         }
 
     })
-    test("Client buys a poer tool",async({page})=>{
+    test("Client buys a power tool",async({page})=>{
 
     })
 
