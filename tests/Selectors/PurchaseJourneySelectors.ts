@@ -11,5 +11,10 @@ export const PurchaseJoruney = {
     AddToCart: "[data-test='add-to-cart']",
     CartNavButton: "[data-test='nav-cart']",
     TotalPrice: "[data-test='line-price']",
+    ProceedButton: "[data-test='proceed-1']",
+    SecondProceedButton: "[data-test='proceed-2-guest']",
+    GuestFirstName: "[data-test='guest-first-name']",
+    GuestLastName: "[data-test='guest-last-name']",
+    PaymentMethod: "[data-test='payment-method']"
 
 }

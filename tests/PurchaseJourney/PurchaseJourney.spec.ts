@@ -26,6 +26,15 @@ test.describe("Client going through purchase journey",async()=>{
         const totalPrice = await page.locator(PurchaseJoruney.TotalPrice).allInnerTexts;
         const _TotalPrice = Number(price)* Number(quantity);
         await expect(_TotalPrice).toEqual(Number(totalPrice))
+        await page.locator(PurchaseJoruney.ProceedButton).click();
+        await page.getByText("Continue as Guest").first().click();
+        await page.locator(LoginSelectors.Email).fill((Math.random() + 1).toString(36).substring(7) + "@grr.la");
+        await page.locator(LoginSelectors.Street).fill('12 Cookie Street');
+        await page.locator(LoginSelectors.PostalCode).fill('1234');
+        await page.locator(LoginSelectors.City).fill('Auckland');
+        await page.locator(LoginSelectors.State).fill('Auckland');
+        await page.locator(LoginSelectors.Country).selectOption('NZ');
+        await page.locator(PurchaseJoruney.PaymentMethod).selectOption("Cash on Delivery")
         //await expect(PurchaseJoruney.TotalPrice).toEqual(price.+quantity)
 
 
