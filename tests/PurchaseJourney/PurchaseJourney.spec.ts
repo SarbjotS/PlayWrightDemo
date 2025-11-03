@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import { LoginSelectors } from '../Selectors/UserLoginSelectors';
-import { ContactSelectors } from '../Selectors/ContactSelectors';
 import { PurchaseJoruney } from '../Selectors/PurchaseJourneySelectors';
 
 
@@ -27,17 +26,23 @@ test.describe("Client going through purchase journey",async()=>{
         const TotalPrice = "$" + Number(Price)* Number(Quantity);
         const ShownPrice = await page.locator(PurchaseJoruney.TotalPrice).textContent();
         expect(TotalPrice).toEqual(ShownPrice);
-        await page.locator(PurchaseJoruney.ProceedButton).click();
+        await page.getByText("Proceed to checkout").first().click();
         await page.getByText("Continue as Guest").first().click();
-
-
-        await page.locator(LoginSelectors.Email).fill((Math.random() + 1).toString(36).substring(7) + "@grr.la");
+        await page.locator(PurchaseJoruney.GuestEmail).fill((Math.random() + 1).toString(36).substring(7) + "@grr.la");
+        await page.locator(PurchaseJoruney.GuestFirstName).fill("John");
+        await page.locator(PurchaseJoruney.GuestLastName).fill("Smith");
+        await page.locator(PurchaseJoruney.GuestSubmit).click();
+        await page.getByText("Proceed to checkout").nth(1).click();
+        
         await page.locator(LoginSelectors.Street).fill('12 Cookie Street');
         await page.locator(LoginSelectors.PostalCode).fill('1234');
         await page.locator(LoginSelectors.City).fill('Auckland');
         await page.locator(LoginSelectors.State).fill('Auckland');
-        await page.locator(LoginSelectors.Country).selectOption('NZ');
+        await page.locator(LoginSelectors.Country).fill('NZ');
+        await page.getByText("Proceed to checkout").nth(2).click();
         await page.locator(PurchaseJoruney.PaymentMethod).selectOption("Cash on Delivery")
+        await page.getByText("Confirm").click();
+        await expect(page.getByText("Payment was successful")).toBeVisible();
         //await expect(PurchaseJoruney.TotalPrice).toEqual(price.+quantity)
 
 

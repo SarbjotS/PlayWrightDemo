@@ -13,8 +13,10 @@ export const PurchaseJoruney = {
     TotalPrice: "[data-test='cart-total']",
     ProceedButton: "[data-test='proceed-1']",
     SecondProceedButton: "[data-test='proceed-2-guest']",
+    GuestEmail: "[data-test='guest-email']",
     GuestFirstName: "[data-test='guest-first-name']",
     GuestLastName: "[data-test='guest-last-name']",
+    GuestSubmit: "[data-test='guest-submit']",
     PaymentMethod: "[data-test='payment-method']",
     ProductPageQuantity: "[data-test='product-quantity']"
 
