@@ -18,6 +18,10 @@ export const PurchaseJoruney = {
     GuestLastName: "[data-test='guest-last-name']",
     GuestSubmit: "[data-test='guest-submit']",
     PaymentMethod: "[data-test='payment-method']",
-    ProductPageQuantity: "[data-test='product-quantity']"
+    ProductPageQuantity: "[data-test='product-quantity']",
+    CreditCardNumber: "[data-test='credit_card_number']",
+    CreditCardExpirey: "[data-test='expiration_date']",
+    CreditCardCVV: "[data-test='cvv']",
+    CreditCardName: "[data-test='card_holder_name']",
 
 }
