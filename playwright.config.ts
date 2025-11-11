@@ -14,6 +14,7 @@ dotenv.config();
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  outputDir: 'C:/playwright-artifacts',
   timeout: 30000,
     globalTimeout: 10 * 60 * 1000,
 

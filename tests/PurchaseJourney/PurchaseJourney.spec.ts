@@ -74,7 +74,20 @@ test.describe("Client going through purchase journey",async()=>{
         await expect(page.getByText("Payment was successful")).toBeVisible();
     })
 
-    test("Verify number of products via API",async({page})=>{
+    test("Verify number of products via API",async({page, request})=>{
+
+        await page.locator(PurchaseJoruney.CategoriesNavButton).click();
+        await page.locator(PurchaseJoruney.PowerTools).click();
+        const response = await request.get('https://api.practicesoftwaretesting.com/products?page=1&by_category_slug=power-tools');
+        expect (response.ok()).toBeTruthy();
+        const body = await response.json();
+        const total = body.total
+        console.log('Total Products: ', total);
+        expect(total).toBeDefined();
+
+
+
+
 
     })
 
